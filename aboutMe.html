@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #E7DFDD;
+            margin: 0;
+            font-family: 'Playfair Display', serif;
+        }
+        .card {
+            width: 300px;
+            height: 400px;
+            perspective: 1000px;
+        }
+        .card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            cursor: pointer;
+        }
+        .card:hover .card-inner {
+            transform: rotateY(180deg);
+        }
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .card-front {
+            background-color: #0E0B16;
+            color: #E7DFDD;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .card-front img {
+            width: 120px;
+            height: 120px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            border: 2px solid #A239CA;
+        }
+        .card-front h2 {
+            margin: 0;
+        }
+        .card-front p {
+            margin: 10px 0 0;
+            color: #A239CA;
+        }
+        .card-back {
+            background-color: #4717F6;
+            color: #E7DFDD;
+            transform: rotateY(180deg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front">
+                <img src="images/Madeline.jpg" alt="Madeline">
+                <h2>Madeline Havraniak</h2>
+                <p>Data Analyst & Front-End Developer</p>
+            </div>
+            <div class="card-back">
+                <p>Hi, I'm Madeline Havraniak. I'm passionate about creating efficient digital solutions and enhancing user experiences through innovative design and analytics.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
