@@ -103,14 +103,31 @@ nav ul li a:hover {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
+/* Modal styles */
 .modal-content {
     background-color: #0E0B16;
     margin: 15% auto;
-    padding: 20px;
+    padding: 20px 40px; /* Increased padding for better spacing */
     border: 1px solid #888;
     width: 80%;
+    max-width: 800px; /* Set a max-width for better control */
     color: #E7DFDD;
     border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Add shadow for depth */
+    text-align: center; /* Center align text */
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    font-size: 2em;
+    font-weight: bold;
+    color: #E7DFDD;
+}
+
+.modal-content p {
+    font-size: 1.1em;
+    margin: 20px 0;
+    color: #E7DFDD;
 }
 
 .close {
@@ -126,3 +143,25 @@ nav ul li a:hover {
     text-decoration: none;
     cursor: pointer;
 }
+
+/* Button styles */
+.contact-btn {
+    background: linear-gradient(90deg, #4717F6, #A239CA);
+    color: #E7DFDD;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.contact-btn:hover {
+    background: linear-gradient(90deg, #A239CA, #4717F6);
+}
+
+@keyframes gradientTextAnimation {
+    0% {background-position: 0%;}
+    100% {background-position: 100%;}
+}
+
