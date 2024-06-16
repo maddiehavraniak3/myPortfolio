@@ -23,3 +23,33 @@ window.onclick = function(event) {
     }
 }
 
+document.addEventListener("DOMContentLoaded", function() {
+    const heading = document.querySelector('.section-heading');
+    const projectContainer = document.querySelector('.project-container');
+
+    setTimeout(() => {
+        heading.style.transition = 'opacity 1s ease-out, transform 1s ease-out';
+        heading.style.opacity = 1;
+        heading.style.transform = 'translateX(0)';
+    }, 500);
+
+    setTimeout(() => {
+        projectContainer.style.transition = 'opacity 1s ease-out, transform 1s ease-out';
+        projectContainer.style.opacity = 1;
+        projectContainer.style.transform = 'translateY(0)';
+    }, 1000);
+});
+
+function openModal(modalId) {
+    document.getElementById(modalId).style.display = "block";
+}
+
+function closeModal(modalId) {
+    document.getElementById(modalId).style.display = "none";
+}
+
+function openPDF(pdfUrl) {
+    window.open(pdfUrl, '_blank');
+}
+
+

@@ -64,19 +64,31 @@ nav ul li a:hover {
 /* Interests section styles */
 .interests-section {
   padding: 100px 20px 40px;
-  text-align: center;
+  text-align: left; /* Align to the left */
   animation: fadeIn 1.5s ease-in-out;
 }
 
 .section-title {
   font-size: 48px;
   color: #E7DFDD;
-  margin-bottom: 40px;
+  margin-bottom: 10px;
   animation: slideIn 1s ease-in-out;
   background-image: linear-gradient(90deg, #4717F6, #A239CA);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
+  position: relative; /* Add this to use the ::after pseudo-element */
+  display: inline-block; /* Add this to ensure the width matches the content */
+  margin-bottom: 0; /* Adjust this to bring the title closer to the line */
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 100%; /* Make the line match the width of the text */
+  height: 1px;
+  background-image: linear-gradient(90deg, #4717F6, #A239CA);
+  margin-top: 5px; /* Adjust this to bring the line closer to the title */
 }
 
 .section-title span.highlight:hover {
@@ -88,6 +100,7 @@ nav ul li a:hover {
 }
 
 .gallery {
+  margin-top: 60px;
   display: flex;
   justify-content: center;
   gap: 20px;
@@ -99,7 +112,6 @@ nav ul li a:hover {
   max-width: 300px;
   height: 400px;
   overflow: hidden;
-
   transition: transform 0.3s, box-shadow 0.3s;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
