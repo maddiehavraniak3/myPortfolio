@@ -5,7 +5,7 @@ body, html {
     width: 100%;
     height: 100%;
     font-family: 'Playfair Display', serif;
-    background: linear-gradient(135deg, #0E0B16, #362d53, #25162c, #4717F6);
+    background: linear-gradient(135deg, #0E0B16, #362d53, #533362, #4717F6);
     background-size: 400% 400%;
     animation: gradientAnimation 15s ease infinite;
     color: #E7DFDD;
@@ -44,6 +44,10 @@ nav ul li a {
     border-radius: 5px;
 }
 
+nav ul li a.active {
+    border-bottom: 2px solid #A239CA; /* Underline the active tab */
+}
+
 nav ul li a:hover {
     color: #0E0B16;
     background-color: #E7DFDD;
@@ -58,14 +62,13 @@ nav ul li a:hover {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding-top: 100px;
 }
 
 .about-section {
-    width: 60%;
+    width: 80%; /* Adjusted for better alignment */
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start; /* Align to the left */
     justify-content: center;
 }
 
@@ -73,9 +76,11 @@ nav ul li a:hover {
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    align-items: flex-start; /* Align to the left */
+    text-align: left; /* Align to the left */
     gap: 10px;
+    transform: translateX(-100%); /* For animation */
+    opacity: 0; /* For animation */
 }
 
 .section-heading-article {
@@ -102,13 +107,19 @@ nav ul li a:hover {
     align-items: center;
     justify-content: center;
     margin-top: 30px;
+    opacity: 0; /* For animation */
+    transform: translateY(50px); /* For animation */
+    transition: opacity 1s ease-out, transform 1s ease-out; /* For animation */
 }
 
 .about-info {
-    width: 60%;
+    width: 80%; /* Adjusted for better alignment */
     display: flex;
     flex-direction: column;
-    text-align: center;
+    text-align: left; /* Align to the left */
+    opacity: 0; /* For animation */
+    transform: translateY(50px); /* For animation */
+    transition: opacity 1s ease-out, transform 1s ease-out; /* For animation */
 }
 
 .about-info p {
@@ -119,13 +130,15 @@ nav ul li a:hover {
 }
 
 .dp {
-    width: 40%;
+    width: 30%; /* Adjusted for better alignment */
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 20px;
     position: relative;
     transition-duration: .5s;
+    opacity: 0; /* For animation */
+    transform: translateY(50px); /* For animation */
 }
 
 .dp img {
@@ -175,15 +188,36 @@ nav ul li a:hover {
     padding: 10px 20px;
     font-size: 1rem;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, box-shadow 0. 3s ease, transform 0.3s ease;
     margin-top: 20px;
+    margin-bottom: 60px;
+    opacity: 0; /* For animation */
+    transform: translateY(50px); /* For animation */
+    transition: opacity 1s ease-out, transform 1s ease-out; /* For animation */
+    text-align: center; /* Center the text */
+    display: inline-block; /* Ensure the button behaves like an inline-block element */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* 3D effect */
+    border-radius: 5px; /* Rounded corners */
 }
 
 .contact-btn:hover {
     background: linear-gradient(90deg, #A239CA, #4717F6);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4); /* Enhanced 3D effect on hover */
+    transform: translateY(-3px); /* Lift button slightly on hover */
+}
+
+.contact-btn:active {
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Reduced shadow on click */
+    transform: translateY(2px); /* Button pressed effect */
 }
 
 @keyframes gradientTextAnimation {
     0% {background-position: 0%;}
     100% {background-position: 100%;}
+}
+
+/* Animation keyframes */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(50px); }
+    100% { opacity: 1; transform: translateY(0); }
 }

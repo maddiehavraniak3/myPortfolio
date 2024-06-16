@@ -44,6 +44,10 @@ nav ul li a {
     border-radius: 5px;
 }
 
+nav ul li a.active {
+    border-bottom: 2px solid #A239CA; /* Underline the active tab */
+}
+
 nav ul li a:hover {
     color: #0E0B16;
     background-color: #E7DFDD;
