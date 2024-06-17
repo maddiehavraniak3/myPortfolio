@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function() {
     const events = [
-        { date: "Feb 2024", title: "Data Analyst Intern at Ualett", description: "Analyzed gig economy financial solutions using advanced data analytics." },
+        { date: "Feb 2024", title: "Data Analyst Intern", description: "Assisted in planning, executing, and optimizing financial analytics projects, providing actionable insights to improve user satisfaction and drive strategic growth." },
         { date: "Jan 2024", title: "Project: Tracking and Logistics System for Irman Sod", description: "Enhanced supply chain operations, significantly boosting operational efficiency." },
-        { date: "May 2023", title: "Front End Software Engineer Intern at Ualett", description: "Led a team of 6 in UI redesign of the Ualett app, increasing user engagement." }
+        { date: "May 2023", title: "Front End Software Engineer Intern", description: "Collaborated with cross-functional teams to redesign the app UI, enhancing user experience and engagement through user feedback and modern front-end technologies." }
     ];
 
     const timelineContainer = document.querySelector(".timeline-container");

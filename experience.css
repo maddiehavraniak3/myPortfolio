@@ -41,7 +41,7 @@ nav ul li {
 }
 
 nav ul li a {
-  color: #A239CA;
+  color: white;
   text-decoration: none;
   font-size: 18px;
   font-family: 'Playfair Display', serif;
@@ -74,7 +74,7 @@ nav ul li a:hover {
   color: #E7DFDD;
   margin-bottom: 10px;
   animation: slideIn 1s ease-in-out;
-  background-image: linear-gradient(90deg, #4717F6, #A239CA);
+  background-image: linear-gradient(90deg, #e3cde1, #b297ed);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
