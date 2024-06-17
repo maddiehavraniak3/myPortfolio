@@ -1,0 +1,176 @@
+/* General styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Playfair Display', serif;
+  background: linear-gradient(135deg, #0E0B16, #362d53, #533362, #4717F6);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
+  color: #E7DFDD;
+}
+
+@keyframes gradientAnimation {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+/* Navigation bar styles */
+header {
+  background-color: rgba(14, 11, 22, 0.9);
+  padding: 10px 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: #A239CA;
+  text-decoration: none;
+  font-size: 18px;
+  font-family: 'Playfair Display', serif;
+  transition: color 0.3s, transform 0.3s, background-color 0.3s;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+}
+
+nav ul li a.active {
+  border-bottom: 2px solid #A239CA; /* Underline the active tab */
+}
+
+nav ul li a:hover {
+  color: #0E0B16;
+  background-color: #E7DFDD;
+  transform: scale(1.1);
+}
+
+/* Timeline styles */
+.timeline {
+  position: relative;
+  margin: 80px auto 50px; /* Adjust the margin-top value to move the section higher */
+  padding: 20px 0;
+  width: 90%;
+  max-width: 1200px;
+}
+
+.section-title {
+  font-size: 48px;
+  color: #E7DFDD;
+  margin-bottom: 10px;
+  animation: slideIn 1s ease-in-out;
+  background-image: linear-gradient(90deg, #4717F6, #A239CA);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-image: linear-gradient(90deg, #4717F6, #A239CA);
+  margin-top: 5px;
+}
+
+.timeline-container {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 52%;
+  top: 0;
+  height: 100%;
+  border-left: 2px solid #A239CA;
+}
+
+.timeline-item {
+  position: relative;
+  margin: 20px 0;
+  padding: 20px;
+  background: rgba(14, 11, 22, 0.7);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
+  width: 45%;
+}
+
+.timeline-item.left {
+  left: 0;
+  text-align: right; /* Ensure text aligns correctly */
+}
+
+.timeline-item.right {
+  left: 55%; /* Adjust this value to keep right items correctly positioned */
+  text-align: left; /* Ensure text aligns correctly */
+}
+
+.timeline-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.timeline-content {
+  text-align: left;
+}
+
+.timeline-item.left .timeline-content {
+  text-align: right; /* Ensure content aligns correctly for left items */
+}
+
+.timeline-date {
+  font-size: 1.2em;
+  color: #A239CA;
+  margin-bottom: 5px;
+}
+
+.timeline-title {
+  font-size: 1.5em;
+  margin: 10px 0;
+}
+
+.timeline-description {
+  font-size: 1em;
+  color: #E7DFDD;
+}
+
+@media (max-width: 768px) {
+  .timeline-container {
+      width: 90%;
+      border-left: none;
+  }
+
+  .timeline-item {
+      width: 100%;
+      left: 0;
+  }
+
+  .timeline-item.right, .timeline-item.left {
+      left: 0;
+      text-align: left;
+  }
+}
